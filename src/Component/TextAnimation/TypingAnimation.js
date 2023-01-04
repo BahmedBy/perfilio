@@ -17,13 +17,13 @@ export default function TypingText({text, className}) {
                 setPosition(position + 1)}
             }, 200)
     }, [position])
-    const endTag = (p) => {
-        for (let i = p; i < text.length; i++) {
-            let c = text.charAt(i)
-            if (c === '>')
-                return i
-        }
-    }
+    // const endTag = (p) => {
+    //     for (let i = p; i < text.length; i++) {
+    //         let c = text.charAt(i)
+    //         if (c === '>')
+    //             return i
+    //     }
+    // }
     const replaceWithBr=()=> {
         return displayed.replace(/\n/g, "<br />")
     }

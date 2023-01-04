@@ -1,4 +1,4 @@
-import {Component, useEffect, useState} from "react";
+import {Component, useEffect} from "react";
 import './project.css'
 import {collection, query, orderBy, startAfter, limit, getDocs} from "firebase/firestore";
 import {db} from "../firebase";
