@@ -37,11 +37,13 @@ export  default function Navbar({links}){
     }
     const isActive=(index)=>{return index===active}
     const scrollTo=(possition,index)=>{
+        closeNav()
         window.removeEventListener("scroll",handleScroll)
         setActive(index)
         setStop(true)
         let p=possition.current.offsetTop-62
         window.scrollTo({top:p,behavior:"smooth"})
+
         awiatForScroll(p)
 
     }
@@ -73,10 +75,11 @@ export  default function Navbar({links}){
             <nav className={showNav}>
 
                 <ul className='nav-flex' ref={ul}>
+                    <div className="closeNav"><button onClick={closeNav} >&#9747;</button></div>
                 {links.map((p,index)=> {
                     return <li onClick={()=>scrollTo(p.link,index)} className={isActive(index)?"active":""} ><span>{p.name}</span></li>
                 })}
-                    <div className="closeNav"><button onClick={closeNav} >&#9747;</button></div>
+
             </ul>
 
             </nav>

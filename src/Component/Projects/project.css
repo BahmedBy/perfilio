@@ -6,35 +6,8 @@
     background-color: #ffffff;
     grid-column: span ;
     justify-self: stretch;
-
-
-}
-.load{
-    position: relative;
-    width: 100%;
-    display: flex;
-    padding: 10px 0;
-    justify-content: center;
 }
 
-.loadMore{
-    display: flex;
-    align-items: center;
-    border: none;
-    margin: 0 4px 0 4px;
-    font-weight: bold;
-    font-size: large;
-    gap: 4px;
-
-}
-.loadicon{
-    width: 20px;
-    height: 20px;
-}
-.loadMore:hover{
-    cursor: pointer;
-    color: #0a86da;
-}
 .project p{
 padding: 0;
 }
