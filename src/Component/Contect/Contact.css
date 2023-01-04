@@ -1,0 +1,6 @@
+.contect{
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    width: 100vw;
+}

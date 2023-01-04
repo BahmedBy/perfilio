@@ -1,0 +1,11 @@
+.project{
+ border: 1px solid darkgray;
+    box-shadow: 1px 2px 3px black ;
+    padding: 1px;
+}
+.projects{
+    display: grid;
+    grid-template-columns: auto auto auto;
+    width: 100vm;
+    grid-column-gap: 5px;
+}

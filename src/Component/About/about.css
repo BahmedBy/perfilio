@@ -1,0 +1,21 @@
+.myPhoto{
+    display: block;
+    width: 200px;
+    height: 200px;
+    margin: auto;
+    border-radius: 50%;
+}
+.photoContanier{
+    display: flex;
+    justify-self: center;
+    align-self: end;
+    height: 100%;
+}
+.container {
+    border: 1px solid black;
+    width: 100%;
+    display: grid;
+    padding: 10px;
+    grid-template-columns: 50% auto;
+
+}
