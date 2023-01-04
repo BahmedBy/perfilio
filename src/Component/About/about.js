@@ -1,19 +1,27 @@
-import bahmed from '../img/bahmed.jpg'
-import '../Style/about.css'
-function About(){
-    return (<div className='container'>
-        <div className='image-Container'>
-            <div className='photoContanier'>
-            <img src={bahmed} className='myPhoto'/></div>
-        </div>
-        <div>
-            <div>
-                <h3>Bahmed Benyammi</h3>
-                <span>Software Developer</span>
-                <p>Graduate looking for a job. Ready to use my skills and passion to advance the mission with a
-                    company. Expert in software design and web development. Mobilizing experience with micro-service architecture, Spring Boot, Nodejs, reactjs, web development</p>
+import bahmed from '../../img/bahmed.jpg'
+import './about.css'
+
+import ParticlesCircle from "../Particles/Particles-Circle";
+import TypingText from "../TextAnimation/TypingAnimation";
+
+
+function About({re}) {
+   console.log(re)
+    return (
+        <div className="body" ref={re}>
+          <ParticlesCircle/>
+            <div className='container'>
+                <div className='image-Container'>
+                    <div className='items'>
+                        <img src={bahmed} className='myPhoto' alt={"my-img"}/></div>
+                </div>
+                <div className="items">
+
+                        <TypingText text={"Hello, \n My name is Bahmed Benyammi \n I'm software engineer"} className={"text"}/>
+                </div>
             </div>
-        </div>
-    </div>)
+
+        </div>)
 }
+
 export default About;

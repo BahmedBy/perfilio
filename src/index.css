@@ -5,9 +5,51 @@ body {
     sans-serif;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
-}
 
+}
+*,html{
+  scrollbar:none;
+  max-width: 100%;
+  margin:0;
+  padding: 0;
+}
 code {
   font-family: source-code-pro, Menlo, Monaco, Consolas, 'Courier New',
     monospace;
+}
+
+.section{
+  padding:20px;
+
+}
+*{
+  font-family: var(--font-family);
+}
+:root{
+  --font-family:"Century Gothic", CenturyGothic, AppleGothic, sans-serif;
+  --pading:0 20px 0 20px;
+  --font-color:black;
+  --grid-column:repeat(auto-fit,minmax(15rem,1fr));;
+}
+.section_title{
+  padding: 20px;
+  font-size: xx-large;
+  font-family: var(--font-family);
+  font-weight: bold;
+  margin: 0;
+}
+a{
+
+  color: inherit;
+  text-decoration: inherit;
+}
+::-webkit-scrollbar {
+  display: none;
+}
+
+@media screen and (max-width: 720px) {
+  .section{
+    padding: 20px 0;
+  }
+
 }
