@@ -2,7 +2,7 @@
     padding: var(--pading);
     display:grid;
 
-    grid-template-columns:  repeat(auto-fit,minmax(12rem,1fr));
+    grid-template-columns:  repeat(2,1fr);
     gap: 4px;
 }
 .certaficat{
@@ -76,4 +76,10 @@ p{
 .certaficat-link:hover{
     color: #59baff;
     cursor: pointer;
+}
+@media screen and (max-width: 720px){
+    .containerEduction{
+        grid-template-columns:  1fr
+
+    }
 }

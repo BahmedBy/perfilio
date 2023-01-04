@@ -3,8 +3,9 @@ import './education.css'
 import {Component, useEffect, useState} from "react";
 import {collection, getDocs, limit, orderBy, query, startAfter} from "firebase/firestore";
 import {db} from "../firebase";
-
+import {TfiReload} from "react-icons/tfi";
 import {FaRegArrowAltCircleDown} from "react-icons/fa";
+
 const Degrees=[{
     title:"Master of software engineering",
     date:"07/2022",
@@ -42,7 +43,7 @@ export default class Education extends Component{
         let q
 
         if (Certificates.length===0)
-            q=query(CertificateCollection,orderBy("date","desc"),limit(4))
+            q=query(CertificateCollection,orderBy("date","desc"),limit(2))
         else
             q=query(CertificateCollection,orderBy("date","desc"),startAfter(Certificates[Certificates.length-1].date),limit(2))
 
@@ -79,6 +80,13 @@ export default class Education extends Component{
                 return <Certaficat certaficat={p} key={p.title}></Certaficat>
             })}
            </div>
+        {total>Certificate.length&& <div className="flex load">
+            <div onClick={this.loadMore} className="loadMore">
+                <p>Load more</p>
+                {spin ?
+                    <TfiReload className={"loadicon spin"} />: <FaRegArrowAltCircleDown className={"loadicon"} />}</div>
+
+        </div>}
     </div>)}
 }
 function Certaficat({certaficat}){

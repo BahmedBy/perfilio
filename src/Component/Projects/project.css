@@ -81,7 +81,7 @@ button{
 .projects{
     position: relative;
     display: grid;
-    grid-template-columns:  var(--grid-column);
+    grid-template-columns:  repeat(3,1fr);
     width: 100vm;
     gap: 4px;
     grid-column-gap: 10px;
@@ -93,3 +93,9 @@ button{
     padding:20px;
 }
 
+@media screen and (max-width: 720px){
+    .projects{
+        grid-template-columns:  1fr
+
+    }
+}

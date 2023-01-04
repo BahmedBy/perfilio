@@ -1,6 +1,6 @@
 import {Component, useEffect, useState} from "react";
 import './project.css'
-import {collection, query, orderBy, startAfter, limit, getDocs,startAt} from "firebase/firestore";
+import {collection, query, orderBy, startAfter, limit, getDocs} from "firebase/firestore";
 import {db} from "../firebase";
 import {FaRegArrowAltCircleDown} from "react-icons/fa";
 import {TfiReload} from "react-icons/tfi";
@@ -74,14 +74,13 @@ export  default class Projects extends Component{
     }
 }
 function Project({project}){
-    const [state,setState]=useState(project);
+
     const getDate=(date)=>{
         let d=date.toDate()
         return (d.getMonth()+1) +"/"+d.getFullYear()
     }
     useEffect(()=>{
-        setState(project)
-    },[project])
+        },[project])
     return <div className='project' >
             <p className='projectTitle'>{project.title}</p>
             <p className='certaficat-date'>{getDate(project.date)}</p>
