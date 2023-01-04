@@ -4,8 +4,8 @@ const technit = ["Java", "Python", "Javascript", "Typescript", "Nodejs", "Reactj
 
 function importAll(r) {
     let images = {};
-    r.keys().map(item => {
-        images[item.replace('./', '')] = r(item);
+    r.keys().forEach(item => {
+         images[item.replace('./', '')] = r(item);
     });
     return images;
 }
@@ -26,7 +26,7 @@ export default function Skills({re}) {
     </div>)
 }
 
-function Tech({img, name}) {
+function Tech({ name}) {
     return (<div className='Tech'>
         <img src={images[name + '.svg']} alt='' className='icon'/>
         <span>{name}</span>
