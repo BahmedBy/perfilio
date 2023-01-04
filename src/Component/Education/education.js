@@ -1,6 +1,6 @@
 
 import './education.css'
-import {Component, useEffect, useState} from "react";
+import {Component} from "react";
 import {collection, getDocs, limit, orderBy, query, startAfter} from "firebase/firestore";
 import {db} from "../firebase";
 import {TfiReload} from "react-icons/tfi";
@@ -28,8 +28,8 @@ export default class Education extends Component{
         }
     }
     componentDidMount() {
-        this.countCertificate()
-        this.getCertificate()
+        this.countCertificate().then()
+        this.getCertificate().then()
     }
     countCertificate=async ()=>{
         let CertificateCollection=collection(db,"Certificates")
@@ -57,7 +57,7 @@ export default class Education extends Component{
 
     }
     loadMore=()=>{
-        this.getCertificate()
+        this.getCertificate().then()
         this.setState({ spin:true})
     }
 
@@ -90,11 +90,7 @@ export default class Education extends Component{
     </div>)}
 }
 function Certaficat({certaficat}){
-    const [state,setState]=useState(certaficat);
 
-    useEffect(()=>{
-        setState(certaficat)
-    },[certaficat])
   return<div className="certaficat">
             <p className='certaficat-title'>{certaficat.title}</p>
             <p className="certaficat-date">{certaficat.date}</p>
