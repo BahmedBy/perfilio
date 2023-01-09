@@ -1,6 +1,7 @@
 import './skills.css'
 
-const technit = ["Java", "Python", "Javascript", "Typescript", "Nodejs", "Reactjs", "Spring Boot", "ExpressJs", "SQL", "Mongodb"]
+const technit = ["Java", "Python", "Javascript", "Typescript", "Nodejs", "Reactjs", "Spring Boot",
+    "ExpressJs", "Mysql","Oracle","Postgresql", "Mongodb"]
 
 function importAll(r) {
     let images = {};
@@ -28,7 +29,7 @@ export default function Skills({re}) {
 
 function Tech({ name}) {
     return (<div className='Tech'>
-        <img src={images[name + '.svg']} alt='' className='icon'/>
+        <img src={images[name.replace(" ","_") + '.svg']} alt='' className='icon'/>
         <span>{name}</span>
     </div>)
 }

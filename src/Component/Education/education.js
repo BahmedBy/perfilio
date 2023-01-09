@@ -28,6 +28,7 @@ export default class Education extends Component{
         }
     }
     componentDidMount() {
+
         this.countCertificate().then()
         this.getCertificate().then()
     }

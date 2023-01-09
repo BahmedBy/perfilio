@@ -1,11 +1,15 @@
 import './Navbar.css'
 
 import {useEffect, useRef, useState} from "react";
+import {useDispatch,useSelector} from "react-redux";
+import {switchTheme} from "../store";
+
 export  default function Navbar({links}){
     const [active,setActive]=useState(0)
     const [stop,setStop]=useState(false)
     const[show,setShow]=useState(false)
     const ul=useRef(null)
+    const dispatch = useDispatch()
    const closeNav=()=>{
         ul.current.classList.add('out');
         setTimeout(()=>{
@@ -28,15 +32,13 @@ export  default function Navbar({links}){
         if (active<links.length-1)
         {
             let nextElementP=links[active+1].link.current.offsetTop
-
             if (p>=nextElementP)
             setActive(prevState => prevState+1)
-
-
         }
     }
     const isActive=(index)=>{return index===active}
     const scrollTo=(possition,index)=>{
+        if (show)
         closeNav()
         window.removeEventListener("scroll",handleScroll)
         setActive(index)
@@ -72,6 +74,9 @@ export  default function Navbar({links}){
                 <div className='nav-flex'>
                     <p className='name'>Bahmed Benyammi</p>
                 </div>
+            <div>
+                <button onClick={()=>{dispatch(switchTheme())}}>switch</button>
+            </div>
             <nav className={showNav}>
 
                 <ul className='nav-flex' ref={ul}>

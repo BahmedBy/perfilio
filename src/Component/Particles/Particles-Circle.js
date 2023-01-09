@@ -1,8 +1,15 @@
 import {loadFull} from "tsparticles";
 import {useCallback} from "react";
 import Particles from "react-tsparticles";
+import {useSelector} from "react-redux";
 import './ParticlesCircle.css'
 export  default function  ParticlesCircle () {
+    const theme=useSelector(state => state.theme.val)
+    let light={circl:"#010721",background:"rgba(248,248,248,0.99)",links:"#a8a8fa"}
+    let dark={circl:"#303069",
+        background:"rgb(0, 3, 10)",
+        links:"#a8a8fa"}
+    const Ptheme=theme==="light"?light:dark
     const particlesInit = useCallback(async engine => {
         console.log(engine);
         // you can initiate the tsParticles instance (engine) here, adding custom shapes or presets
@@ -25,7 +32,7 @@ export  default function  ParticlesCircle () {
 
                 background: {
                     color: {
-                        value: "#e1e1e1",
+                        value: Ptheme.background,
                     },
 
                 },
@@ -44,10 +51,10 @@ export  default function  ParticlesCircle () {
                 },
                 particles: {
                     color: {
-                        value: "#ffffff",
+                        value: Ptheme.circl,
                     },
                     links: {
-                        color: "#ffffff",
+                        color: Ptheme.links,
                         distance: 450,
                         enable: true,
                         opacity: 0.5,

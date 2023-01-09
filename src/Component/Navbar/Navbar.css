@@ -1,15 +1,18 @@
 .nav{
-    position: relative;
+    position: sticky;
+    top: 0;
     height: 62px;
     display: flex;
-    background-color: white;
+    background-color: var(--body-background);
     width: 100%;
     align-items: center;
     justify-content: space-between;
     box-shadow: 0 -1px 5px #b4b4b4;
     font-family: var(--font-family);
     z-index: 50;
+
 }
+
 .name {
     margin: 0 10px;
     font-size: 24px;
@@ -26,6 +29,8 @@ ul{
     font-weight: 800;
     text-decoration: none;
     height: 100%;
+    animation: none !important;
+    transition: none !important;
 }
 .nav-flex{
     display: flex;
@@ -36,7 +41,7 @@ ul{
     color: #ffc352;
 }
 .active span{
-    color: #ff8800;
+    color: var(--link-color)!important;
 }
 .active span:after{
 
@@ -143,14 +148,13 @@ li span{
         display: block ;
     }
     ul{
-
         position: fixed;
         background:white;
         height: 100%;
         justify-content: start;
         padding: 10px 5px;
         width: 80%;
-        animation: 1s ease-out 0s 1 slideInFromLeft;
+        animation: 1s ease-out 0s 1 slideInFromLeft !important;
     }
     ul li{
         background-color: white;
@@ -163,13 +167,13 @@ li span{
     }
     .name {
         margin: 0 10px;
-        font-size: 12px;
-        font-weight: 400;
+        font-size: x-large;
+        font-weight: bold;
 
     }
 }
 .out{
-    animation: 1s ease-out 0s 1 slidetoRight;
+    animation: 1s ease-out 0s 1 slidetoRight !important;
 }
 @keyframes slideInFromLeft {
     0% {

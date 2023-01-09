@@ -5,13 +5,21 @@ body {
     sans-serif;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
-
+  background-color: var(--body-background);
+}
+body,html{
+  height: 100%;
+max-width: 100vw;
 }
 *,html{
   scrollbar:none;
   max-width: 100%;
   margin:0;
   padding: 0;
+
+}
+p,span{
+  color: var(--font-color) !important;
 }
 code {
   font-family: source-code-pro, Menlo, Monaco, Consolas, 'Courier New',
@@ -56,6 +64,22 @@ code {
   --pading:0 20px 0 20px;
   --font-color:black;
   --grid-column:repeat(auto-fit,minmax(15rem,1fr));;
+  --color: #000000;
+  --link-color:  #ff8800;
+  --facebook-color: #0a86da;
+  --fiver-color: #06f506;
+  --twitter-color: #00c0ff;
+  --linken-color: #0093fc;
+  --body-background:rgba(246, 245, 245, 0.7);
+}
+[data-theme="dark"] {
+  --color: #c1bfbd;
+  --font-color:#c1bfbd;
+  --link-color:#0a86da;
+  --link-white-color:#c1bfbd;
+  --bg-color: #333;
+  --body-background: rgb(0, 3, 10);
+
 }
 .section_title{
   padding: 20px;

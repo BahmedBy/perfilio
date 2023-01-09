@@ -1,4 +1,5 @@
-.contact{
+.contact {
+    position: relative;
     display: flex;
     flex-direction: column;
     align-items: center;
@@ -6,40 +7,92 @@
     width: 100vw;
     padding: 50px 0;
     gap: 5px;
+    height: 400px;
+
 }
-.emailButton{
+
+.emailButton {
     display: flex;
     justify-items: center;
     align-items: center;
     gap: 10px;
     font-size: medium;
 }
-.socialMedia{
+
+.socialMedia {
     display: flex;
     gap: 10px;
     align-items: center;
 }
-.contact > p{
+
+.contact > p {
     padding: 10px;
     font-size: large;
     font-weight: bold;
 }
-.fiverr{
-    color: #06f506;
+
+.ContactBackground {
+    position: absolute;
+    top: 0;
+    left: 0;
+    z-index: -1;
+    width: 100%;
+    height: 100%;
+}
+
+.fiverr {
+
+    color:var(--fiver-color) ;
     width: 80px;
     height: 80px;
 }
-.socialIcon{
+.whatsapp{
+    color: var(--fiver-color);
+}
+.linkein{
+    color: var(--linken-color);
+}
+.twitter{
+    color: var(--twitter-color);
+}
+.socialIcon {
     width: 30px;
     height: 30px;
 }
-.facebook{
-    color: #0a86da;
+
+.facebook {
+    color:var(--facebook-color) ;
 }
-.image{
+
+.image {
     isplay: block;
-    width: 50px;
-    height: 50px;
+    width: 100px;
+    height: 100px;
     margin: auto;
     border-radius: 50%;
+}
+button:hover{
+    cursor: pointer;
+}
+.cls-1b{fill:none;clip-rule:evenodd;}
+.cls-2b{clip-path:url(#clip-path);}
+.cls-3b{fill:url(#linear-gradient)}
+.b-top{
+    position: absolute;
+    width: 80%;
+    height: 80%;
+    top: 0;
+    left: 0;
+}
+.b-down{
+    position: absolute;
+    rotate: 180deg;
+    width: 100%;
+    height: 100%;
+
+}
+svg{
+    position: relative;
+    max-width: 100%;
+    max-height: 100%;
 }
