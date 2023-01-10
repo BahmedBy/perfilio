@@ -11,8 +11,8 @@
     padding: 1rem;
     position: relative;
     border-radius: 2px;
-    border: solid #d5d3d3 1px;
-    box-shadow:1px 1px 1px #e8e7e7;
+    border: solid var(--border-color) 1px;
+    box-shadow:1px 1px 1px var(--shadow);
 
 }
 
@@ -32,7 +32,7 @@
     height: 0;
     align-items: end;
     left: calc(100% - 80px);
-    border-bottom: 80px solid #faf61e;
+    border-bottom: 80px solid var(--triangle-color);
     border-left: 80px solid transparent;
     z-index: -2;
 }
@@ -42,7 +42,7 @@
     height: 0;
     top:calc(100% - 50px);
     left: calc(100% - 50px);
-    border-bottom: 50px solid #ffffff;
+    border-bottom: 50px solid var(--body-background);
     border-left: 50px solid transparent;
     z-index: -1;
 }

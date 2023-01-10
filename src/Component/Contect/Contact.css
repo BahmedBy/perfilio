@@ -10,7 +10,9 @@
     height: 400px;
 
 }
-
+.email{
+    color: red;
+}
 .emailButton {
     display: flex;
     justify-items: center;
@@ -95,4 +97,11 @@ svg{
     position: relative;
     max-width: 100%;
     max-height: 100%;
+}
+[data-theme='dark'] .github{
+    color: white;
+}
+[data-theme='dark'] .emailButton{
+    color: white;
+    border-color: white;
 }

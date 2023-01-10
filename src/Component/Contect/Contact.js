@@ -30,7 +30,7 @@ export default function Contact({re}) {
             </div>
             <p>Or</p>
             <div>
-               <Link link="mailto:benyammibahmed@gmail.com"><button className="emailButton"><SiGmail className="socialIcon"></SiGmail>send me mail</button></Link>
+               <Link link="mailto:benyammibahmed@gmail.com"><button className="emailButton"><SiGmail className="socialIcon email"></SiGmail>send me a email</button></Link>
             </div>
 
         </div>

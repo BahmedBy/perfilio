@@ -1,8 +1,13 @@
 import {configureStore, createSlice} from '@reduxjs/toolkit'
 const initTheme=()=>{
-    if (localStorage.key('theme')!==undefined)
-        return localStorage.key('theme')
-    return window.matchMedia('(prefers-color-scheme: dark)').matches? 'dark':'light'
+
+    if (localStorage.getItem('theme')!==undefined)
+    {
+        document.documentElement.setAttribute('data-theme',localStorage.getItem('theme'))
+        return localStorage.getItem('theme')}
+
+
+    return 'light'
 }
 const initialState = {
     val: initTheme(),
@@ -24,6 +29,12 @@ export const theme = createSlice({
             document.documentElement.setAttribute('data-theme',theme)
 
         },
+        setTheme:(state, action)=>{
+            console.log(action.payload)
+            state.val=action.payload
+            localStorage.setItem('theme',action.payload)
+            document.documentElement.setAttribute('data-theme',action.payload)
+        }
 
     },
 })
@@ -32,4 +43,4 @@ export const store = configureStore({
         theme: theme.reducer,
     },
 })
-export const{switchTheme}=theme.actions
+export const{switchTheme,setTheme}=theme.actions

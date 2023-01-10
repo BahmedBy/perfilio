@@ -21,15 +21,19 @@ export default function Skills({re}) {
 
         <div className='skills-container'>
             {technit.map(e => {
+
                 return <Tech name={e}/>
             })}
         </div>
+
     </div>)
 }
 
 function Tech({ name}) {
+
     return (<div className='Tech'>
-        <img src={images[name.replace(" ","_") + '.svg']} alt='' className='icon'/>
+        {name==="ExpressJs"?      <div className="express icon"></div>:
+            <img src={images[name.replace(" ","_") + '.svg']} alt='' className='icon'/>}
         <span>{name}</span>
     </div>)
 }

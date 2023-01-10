@@ -5,9 +5,17 @@ import Projects from "./Component/Projects/Project";
 import Skills from "./Component/Skills/Skills";
 import Contact from "./Component/Contect/Contact";
 import Education from "./Component/Education/education";
-import {useRef} from "react";
+import {useEffect, useRef} from "react";
+import {useDispatch} from "react-redux";
+import {setTheme} from "./Component/store";
 
 function App() {
+    const dispatch=useDispatch()
+    useEffect(()=>{
+        let defaultTheme= window.matchMedia('(prefers-color-scheme: dark)').matches? 'dark':'light'
+        console.log(defaultTheme)
+       dispatch(setTheme(defaultTheme))
+    },[])
     const about=useRef(null)
     const project=useRef(null)
     const education=useRef(null)
@@ -20,6 +28,7 @@ function App() {
         {name : 'Contact', link:contact}
 
     ]
+
     return (
 
         <div>

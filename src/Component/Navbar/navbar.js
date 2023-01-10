@@ -3,8 +3,10 @@ import './Navbar.css'
 import {useEffect, useRef, useState} from "react";
 import {useDispatch,useSelector} from "react-redux";
 import {switchTheme} from "../store";
+import {BsFillMoonFill, BsFillSunFill} from "react-icons/bs";
 
 export  default function Navbar({links}){
+    const theme=useSelector(state => state.theme.val)
     const [active,setActive]=useState(0)
     const [stop,setStop]=useState(false)
     const[show,setShow]=useState(false)
@@ -74,8 +76,10 @@ export  default function Navbar({links}){
                 <div className='nav-flex'>
                     <p className='name'>Bahmed Benyammi</p>
                 </div>
-            <div>
-                <button onClick={()=>{dispatch(switchTheme())}}>switch</button>
+            <div className="subnav">
+            <div style={{margin:"auto"}}>
+                <button className="swithButton" onClick={()=>{dispatch(switchTheme())}}>{theme==='dark'?<BsFillMoonFill style={{color:"white"}} className='iconTheme'/>
+                    :<BsFillSunFill className='iconTheme'/>}</button>
             </div>
             <nav className={showNav}>
 
@@ -89,6 +93,6 @@ export  default function Navbar({links}){
 
             </nav>
             <div className="openNav"><button onClick={()=> setShow(true)}>&#9776;</button></div>
-        </div>
+        </div></div>
     )
 }

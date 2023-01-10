@@ -12,14 +12,29 @@
     z-index: 50;
 
 }
+.subnav{
+    display: flex;
+    align-content: center;
+    justify-content: center;
 
+}
 .name {
     margin: 0 10px;
     font-size: 24px;
     font-weight: 800;
 
 }
-
+.swithButton{
+    display: flex;
+    justify-content: center;
+    border:none;
+    text-align: center;
+    align-content: center;
+}
+.iconTheme{
+    width: 20px;
+    height: 20px;
+}
 ul{
     list-style: none;
     margin: 0;
@@ -49,7 +64,7 @@ ul{
     width: 80%;
     margin: auto;
     transition:width 200ms linear;
-    border-bottom: 2px solid #ff8800;
+    border-bottom: 2px solid var(--link-color);
 }
 
 a{
@@ -149,16 +164,14 @@ li span{
     }
     ul{
         position: fixed;
-        background:white;
+        background:var(--body-background);
         height: 100%;
         justify-content: start;
         padding: 10px 5px;
         width: 80%;
         animation: 1s ease-out 0s 1 slideInFromLeft !important;
     }
-    ul li{
-        background-color: white;
-    }
+
     li{
         align-content: center;
         padding: 10px 0;
@@ -194,4 +207,10 @@ li span{
         transform: translateX(-100%);
         opacity: 0;
     }
+}
+[data-theme='dark'] .openNav button,[data-theme='dark'] .closeNav button{
+    color: var(--color);
+    border: none;
+    outline: none;
+    border-radius: 0;
 }

@@ -51,6 +51,10 @@ code {
 .loadicon{
   width: 20px;
   height: 20px;
+
+}
+[data-theme='dark'] .loadicon{
+  color: white;
 }
 .loadMore:hover{
   cursor: pointer;
@@ -70,7 +74,10 @@ code {
   --fiver-color: #06f506;
   --twitter-color: #00c0ff;
   --linken-color: #0093fc;
-  --body-background:rgba(246, 245, 245, 0.7);
+  --body-background:rgba(246, 245, 245);
+  --triangle-color:#faf61e;
+  --border-color:#d5d3d3;
+  --shadow:#e8e7e7m
 }
 [data-theme="dark"] {
   --color: #c1bfbd;
@@ -78,8 +85,10 @@ code {
   --link-color:#0a86da;
   --link-white-color:#c1bfbd;
   --bg-color: #333;
-  --body-background: rgb(0, 3, 10);
-
+  --body-background: rgb(0, 2, 10);
+  --triangle-color:#0a86da;
+  --border-color: #525259;
+  --shadow: #09102d;
 }
 .section_title{
   padding: 20px;

@@ -85,9 +85,10 @@ function Project({project}){
             <p className='projectTitle'>{project.title}</p>
             <p className='certaficat-date'>{getDate(project.date)}</p>
             <p className="project-description">{project.description} </p>
-            <div className="flex gap-5">
-                <button className='btn btn-demo'>Demo</button>
-                <button className='btn btn-code'>Code</button>
+            <div className="flex gap-10">
+                {project.demo!==undefined&& project.demo!==''&&<a href={project.demo}> <button className='btn btn-demo'>Demo</button></a>}
+                {project.code!==undefined&& project.code!==''&&  <a href={project.code}>
+                    <button className='btn btn-code'>Code</button></a>}
             </div>
         </div>
 
