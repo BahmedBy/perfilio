@@ -72,11 +72,26 @@ p{
     color: #2d2dee;
     font-weight: bold;
     margin-right: 0.5rem;
-    text-align: end;
+    align-content: center;
+    justify-content: end;
+    display: flex;
+}
+.certaficatIcon{
+    width: 20px;
+    height: 20px;
+    align-self: center;
 }
 .certaficat-link:hover{
-    color: #59baff;
+
     cursor: pointer;
+}
+.certaficat-link p {
+    color: var(--link-color) !important;
+    align-items: center;
+    display: flex;
+}
+.certaficat-link p:hover {
+    color: #59baff !important;
 }
 @media screen and (max-width: 720px){
     .containerEduction{

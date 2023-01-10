@@ -5,6 +5,7 @@ import {collection, getDocs, limit, orderBy, query, startAfter} from "firebase/f
 import {db} from "../firebase";
 import {TfiReload} from "react-icons/tfi";
 import {FaRegArrowAltCircleDown} from "react-icons/fa";
+import {TbFileCertificate} from "react-icons/tb";
 
 const Degrees=[{
     title:"Master of software engineering",
@@ -96,8 +97,9 @@ function Certaficat({certaficat}){
             <p className='certaficat-title'>{certaficat.title}</p>
             <p className="certaficat-date">{certaficat.date}</p>
             <p className="organisation">{certaficat.organization}</p>
-      {certaficat.link!==undefined&&<p className="certaficat-link">
-          View</p>}
+      {certaficat.link!==undefined&&<a href={certaficat.link} rel="noreferrer" target="_blank" className="certaficat-link">
+          <p >
+          <TbFileCertificate className="certaficatIcon"/>View</p></a>}
       {certaficat.link===undefined&&<><div className="sticker">
           <div className="triangle"></div>
       </div>
