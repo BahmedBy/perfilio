@@ -1,16 +1,7 @@
 import {configureStore, createSlice} from '@reduxjs/toolkit'
-const initTheme=()=>{
 
-    if (localStorage.getItem('theme')!==undefined)
-    {
-        document.documentElement.setAttribute('data-theme',localStorage.getItem('theme'))
-        return localStorage.getItem('theme')}
-
-
-    return 'light'
-}
 const initialState = {
-    val: initTheme(),
+    val: 'light',
 }
 
 export const theme = createSlice({

@@ -12,10 +12,15 @@ import {setTheme} from "./Component/store";
 function App() {
     const dispatch=useDispatch()
     useEffect(()=>{
-        let defaultTheme= window.matchMedia('(prefers-color-scheme: dark)').matches? 'dark':'light'
-        console.log(defaultTheme)
-       dispatch(setTheme(defaultTheme))
+       dispatch(setTheme(initTheme()))
     },[])
+    const initTheme=()=>{
+        if (localStorage.getItem('theme')!==undefined)
+        {
+            document.documentElement.setAttribute('data-theme',localStorage.getItem('theme'))
+            return localStorage.getItem('theme')}
+        return window.matchMedia('(prefers-color-scheme: dark)').matches? 'dark':'light'
+    }
     const about=useRef(null)
     const project=useRef(null)
     const education=useRef(null)
