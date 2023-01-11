@@ -3,9 +3,10 @@
     border-radius: 5px;
     box-shadow:1px 1px 1px var(--shadow);
     padding: 10px;
-
-    grid-column: span ;
     justify-self: stretch;
+    display: flex;
+    flex-direction: column;
+    flex-grow: 1;
 }
 
 
@@ -28,6 +29,7 @@
 }
 .project-description{
     padding: 10px 10px;
+    height:100%;
 }
 
 .projectTitle{
@@ -36,14 +38,17 @@
     font-size: large;
     font-weight: bold;
 }
-.flex{
+.btnContainer{
     display: flex;
     align-items: center;
-}
-.gap-10{
     margin: 0 10px;
-   gap: 10px;
+    gap: 10px;
+    align-self: flex-end;
+    padding: 5px 0;
+    justify-self: end;
+
 }
+
 button{
     background: var(--body-background);
     border: 1px solid;
