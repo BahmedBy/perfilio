@@ -11,7 +11,7 @@ function About({re}) {
     const handleFinish=(i)=>{
        if (i===order)
         setOrder( (pre)=>pre + 1)
-        console.log("finish",order,i===order)
+
     }
     return (
         <div className="body" ref={re}>

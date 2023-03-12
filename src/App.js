@@ -10,27 +10,31 @@ import {useDispatch} from "react-redux";
 import {setTheme} from "./Component/store";
 
 function App() {
-    const dispatch=useDispatch()
-    useEffect(()=>{
-       dispatch(setTheme(initTheme()))
-    },[])
-    const initTheme=()=>{
-        if (localStorage.getItem('theme')!==undefined)
-        {
-            document.documentElement.setAttribute('data-theme',localStorage.getItem('theme'))
-            return localStorage.getItem('theme')}
-        return window.matchMedia('(prefers-color-scheme: dark)').matches? 'dark':'light'
+    const dispatch = useDispatch()
+    useEffect(() => {
+        dispatch(setTheme(initTheme()))
+    }, [])
+    const initTheme = () => {
+        var theme;
+
+        if (localStorage.hasOwnProperty('theme')) {
+            theme = localStorage.getItem('theme')
+        } else
+            theme = window.matchMedia('(prefers-color-scheme: dark)').matches ? 'dark' : 'light'
+        document.documentElement.setAttribute('data-theme', theme)
+
+        return theme
     }
-    const about=useRef(null)
-    const project=useRef(null)
-    const education=useRef(null)
-    const skills=useRef(null)
-    const contact=useRef(null)
-    const links=[{name : 'About ', link:about},
-        {name : 'Projects', link:project},
-        {name : 'Education', link:education},
-        {name : 'Skills', link:skills},
-        {name : 'Contact', link:contact}
+    const about = useRef(null)
+    const project = useRef(null)
+    const education = useRef(null)
+    const skills = useRef(null)
+    const contact = useRef(null)
+    const links = [{name: 'About ', link: about},
+        {name: 'Projects', link: project},
+        {name: 'Education', link: education},
+        {name: 'Skills', link: skills},
+        {name: 'Contact', link: contact}
 
     ]
 

@@ -11,22 +11,19 @@ export  default function  ParticlesCircle () {
         links:"#a8a8fa"}
     const Ptheme=theme==="light"?light:dark
     const particlesInit = useCallback(async engine => {
-        console.log(engine);
+
         // you can initiate the tsParticles instance (engine) here, adding custom shapes or presets
         // this loads the tsparticles package bundle, it's the easiest method for getting everything ready
         // starting from v2 you can add only the features you need reducing the bundle size
         await loadFull(engine);
     }, []);
 
-    const particlesLoaded = useCallback(async container => {
-        await console.log(container);
-    }, []);
 
     return (
         <Particles className="ParticlesCircle"
             id="tsparticles"
             init={particlesInit}
-            loaded={particlesLoaded}
+
             options={{
                 fullScreen:false,
 

@@ -6,7 +6,7 @@ export default function TypingText({text, className,order=0 , handleFinish ,wait
     const [displayed, setDisplayed] = useState('');
 
     useEffect(() => {
-       console.log(text,order)
+
         let b=displayed.length !== text.length
         if (order!==waitFor)
             return;
@@ -23,8 +23,6 @@ export default function TypingText({text, className,order=0 , handleFinish ,wait
             }, 200)
         else
         {
-
-            console.log(text,order!==waitFor,order)
             if (handleFinish!==undefined)
                 handleFinish(order)
         }

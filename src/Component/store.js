@@ -9,7 +9,7 @@ export const theme = createSlice({
     initialState,
     reducers: {
         switchTheme: (state) => {
-            console.log("ok")
+
             let theme
             if (state.val==='dark')
                 theme='light'
@@ -21,7 +21,6 @@ export const theme = createSlice({
 
         },
         setTheme:(state, action)=>{
-            console.log(action.payload)
             state.val=action.payload
             localStorage.setItem('theme',action.payload)
             document.documentElement.setAttribute('data-theme',action.payload)
