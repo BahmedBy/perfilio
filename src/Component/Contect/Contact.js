@@ -21,10 +21,7 @@ export default function Contact({re}) {
                 <Link link="https://wa.me/213673928497"><BsWhatsapp className="whatsapp socialIcon"/></Link>
                 <Link link="https://www.linkedin.com/in/bahmed-benyammi-336a381a4/"><AiFillLinkedin
                     className="linkein socialIcon"/></Link>
-                // <Link link="https://www.fiverr.com/bahmedbenyammi">
-                //     <div className="socialIcon">
-                //         <FiverrIcon/></div>
-                // </Link>
+      
                 <Link link="https://github.com/bahmedBenyammi"><BsGithub
                     className="github socialIcon"></BsGithub></Link>
             </div>
